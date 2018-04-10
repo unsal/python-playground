@@ -25,7 +25,7 @@ class DBConfig:
 
 class Connect:
     def __init__(self):
-        dbconfig = DBConfig("./database/config.json")
+        dbconfig = DBConfig("./model/config.json")
         self.host = dbconfig.host
         self.database = dbconfig.database
         self.user = dbconfig.user

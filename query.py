@@ -2,8 +2,8 @@ from sqlalchemy import (Column, String, Integer)
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import func
 from sqlalchemy import  or_
-from database.Rehber import Rehber
-from database.Connection import Connect
+from model.Rehber import Rehber
+from model.Connection import Connect
 
 conn = Connect()
 session = conn.session()

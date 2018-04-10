@@ -1,6 +1,6 @@
 
 import json
-from database.Connection import Connect
+from model.Connection import Connect
 
 class Query():
 

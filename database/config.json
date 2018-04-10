@@ -1,8 +1,0 @@
-{
-  "postgres": {
-        "host":"u2y.cnyxtuppiqxw.eu-west-1.rds.amazonaws.com:5432",
-        "database":"gfox_dev",
-        "user": "unsal",
-        "password": "Qaz1wsx2!"
-  }
-}

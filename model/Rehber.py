@@ -16,3 +16,4 @@ class Rehber(Base):
             "rehber_adi='{self.rehber_adi}', " \
             "rehber_tel='{self.rehber_tel}', " \
             "rehber_adres='{self.rehber_adres}')".format(self=self)
+

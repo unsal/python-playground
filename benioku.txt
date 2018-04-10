@@ -2,8 +2,8 @@ Requirements:
 
 1. virtualenv -p /usr/local/bin/python3.6 myenv36
 2. cd myenv36/bin > source activate
-3. pip install sqlarchemy
-4. pip install psycopg2-binary
-5.  create folder > .vscode > create settings.json > add this param:
+3. pip install -r requirements.txt
+4.  create folder > .vscode > create settings.json > add this param:
     "python.pythonPath": "${workspaceFolder}/myenv36/bin/python"
-6. config github
+5. configure github
+6. thats all

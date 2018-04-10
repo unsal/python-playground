@@ -3,8 +3,8 @@ from sqlalchemy import (Column, String, Integer)
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 # Database
-from database.Connection import Connect
-from database.Rehber import Rehber
+from model.Connection import Connect
+from model.Rehber import Rehber
 
 conn = Connect()
 session = conn.session()
