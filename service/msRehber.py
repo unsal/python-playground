@@ -8,7 +8,7 @@ import sqlalchemy
 def getRehber(kodu):
     conn = Connect()
     session = conn.session()
-    # result = session.execute("select * from rehber where rehber_id = "+id)
+    # result = session.execute("select * from rehber where rehber_id = 01")
     result = session.query(Rehber).filter(Rehber.rehber_id == kodu).first()
 
     a = []

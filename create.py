@@ -1,11 +1,18 @@
 from sqlalchemy import create_engine
-from sqlalchemy import (Column, Integer, String)
 from sqlalchemy.ext.declarative import declarative_base
 from model.Connection import Connect
 from model.Rehber import Rehber
+from flask import Flask
+
+app = Flask(__name__)
+app.config.from_object('model.settings.Config')
+
+connStr = "postgresql+psycopg2://" + \
+    app.config['USER']+":"+app.config['PASSWORD']+"@" + \
+    app.config['HOST']+"/"+app.config['DATABASE']
 
 Base = declarative_base()
-engine = create_engine('postgresql+psycopg2://unsal:Qaz1wsx2!@u2y.cnyxtuppiqxw.eu-west-1.rds.amazonaws.com:5432/gfox_dev')
+engine = create_engine(connStr)
 
 RehberTable = Rehber(Base)
 

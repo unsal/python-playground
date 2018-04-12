@@ -5,34 +5,19 @@
 # session.execute(SQL) or result = session.query(...) SQLAlchemy..
 # session.close()
 
-import json
+from flask import Flask
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-
-class DBConfig:
-      def __init__(self, configfile):
-
-        with open(configfile, encoding="utf-8-sig") as f:
-            data = json.load(f)
-            item = data["postgres"]
-
-            self.host = item["host"]
-            self.database = item["database"]
-            self.user = item["user"]
-            self.password = item["password"]
-            f.close()
+app = Flask(__name__)
+app.config.from_object('model.settings.Config')
 
 class Connect:
     def __init__(self):
-        dbconfig = DBConfig("./model/config.json")
-        self.host = dbconfig.host
-        self.database = dbconfig.database
-        self.user = dbconfig.user
-        self.password = dbconfig.password
-        connStr = "postgresql+psycopg2://"+self.user+":"+self.password+"@"+self.host+"/"+self.database
+        connStr = "postgresql+psycopg2://"+app.config['USER']+":"+app.config['PASSWORD']+"@"+app.config['HOST']+"/"+app.config['DATABASE']
         engine = create_engine(connStr)
         self.session = sessionmaker(bind=engine)
+        # print(connStr)
 
 
 if __name__ == "__main__":
